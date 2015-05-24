@@ -12,7 +12,7 @@ RUN yum -y --noplugins --verbose install nginx git wget tar
 
 # Java installation.
 #
-RUN wget -O /tmp/jdk-8u20-linux-x64.rpm http://foo/jdk-8u20-linux-x64.rpm
+RUN wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.rpm -O /tmp/jdk-8u20-linux-x64.rpm
 RUN rpm -i /tmp/jdk-8u20-linux-x64.rpm
 RUN rm /tmp/jdk-8u20-linux-x64.rpm
 
