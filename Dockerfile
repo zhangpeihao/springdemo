@@ -40,7 +40,7 @@ RUN chmod a+x /usr/local/start-everything.sh
 
 # Add the application itself
 RUN mkdir /webapp
-Add ./webapp cd /webapp
+Add ./webapp /webapp
 
 # Environment variables
 ENV JAVA_HOME /usr/java/latest
