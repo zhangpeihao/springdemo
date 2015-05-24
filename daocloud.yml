@@ -1,0 +1,14 @@
+image: centos:centos7
+
+services:
+
+env:
+
+install:
+    - echo "Installing"
+
+before_script:
+    - echo "Setup"
+
+script:
+    - echo "Run test"
