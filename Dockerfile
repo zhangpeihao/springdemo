@@ -38,16 +38,24 @@ RUN rm -f /etc/nginx/conf.d/default.conf
 ADD ./docker/start-script /usr/local
 RUN chmod a+x /usr/local/start-everything.sh
 
-# Set application volume
-VOLUME ["/webapp"]
+# Add the application itself
+RUN mkdir /webapp
+Add ./webapp cd /webapp
 
 # Environment variables
 ENV JAVA_HOME /usr/java/latest
 ENV CATALINA_HOME /usr/local/tomcat
 ENV MAVEN_HOME /usr/local/maven
-ENV APP_HOME /usr/local/ninja-sample
+ENV APP_HOME /webapp
 
-ENTERPOINT ["/usr/local/start-everything.sh"]
+# Build the app once, so we can include all the dependencies in the image
+RUN cd /webapp && /usr/local/maven/bin/mvn -Dmaven.test.skip=true package &&
+    cp target/ninja-sample-1.0-SNAPSHOT.war $CATALINA_HOME/webapps/ROOT.war
+
+# Set the start script as the default command (this will be overriden if a command is passed to Docker on the commandline).
+# Note that we tail Tomcat's log in order to keep the process running
+# so that Docker will not shutdown the container. This is a bit of a hack.
+CMD /usr/local/start-everything.sh && tail -F /usr/local/tomcat/logs/catalina.out
 
 # Forward HTTP ports
 EXPOSE 80 8080
