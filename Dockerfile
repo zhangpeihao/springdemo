@@ -19,10 +19,10 @@ RUN rm /tmp/jdk-8u20-linux-x64.rpm
 # Tomcat 7
 #
 # Not available on yum, so install manually
-RUN wget -O /tmp/apache-tomcat-7.0.55.tar.gz http://apache.mirror.rafal.ca/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz
-RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.55.tar.gz
-RUN ln -s /usr/local/apache-tomcat-7.0.55 /usr/local/tomcat
-RUN rm /tmp/apache-tomcat-7.0.55.tar.gz
+RUN wget -O /tmp/apache-tomcat-7.0.62.tar.gz http://apache.mirror.rafal.ca/tomcat/tomcat-7/v7.0.62/bin/apache-tomcat-7.0.62.tar.gz
+RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.62.tar.gz
+RUN ln -s /usr/local/apache-tomcat-7.0.62 /usr/local/tomcat
+RUN rm /tmp/apache-tomcat-7.0.62.tar.gz
 
 # Download Maven
 RUN wget -O /tmp/apache-maven-3.1.1-bin.tar.gz http://ftp.jaist.ac.jp/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz
