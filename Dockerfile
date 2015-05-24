@@ -4,17 +4,17 @@ FROM centos:centos7
 
 MAINTAINER Zhang Peihao (zhangpeihao@gmail.com)
 
-# Java installation.
-#
-RUN wget -O /tmp/jdk-8u20-linux-x64.rpm http://foo/jdk-8u20-linux-x64.rpm
-RUN rpm -i /tmp/jdk-8u20-linux-x64.rpm
-RUN rm /tmp/jdk-8u20-linux-x64.rpm
-
 # Other stuff can be installed with yum
 # (Note that git is quite old. If you want 1.8.x, install from source.)
 ADD ./docker/etc/nginx.repo /etc/yum/repos.d/nginx.repo
 RUN yum -y --noplugins --verbose update
 RUN yum -y --noplugins --verbose install nginx git wget tar
+
+# Java installation.
+#
+RUN wget -O /tmp/jdk-8u20-linux-x64.rpm http://foo/jdk-8u20-linux-x64.rpm
+RUN rpm -i /tmp/jdk-8u20-linux-x64.rpm
+RUN rm /tmp/jdk-8u20-linux-x64.rpm
 
 # Tomcat 7
 #
