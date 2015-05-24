@@ -19,7 +19,7 @@ RUN rm /tmp/jdk-8u20-linux-x64.rpm
 # Tomcat 7
 #
 # Not available on yum, so install manually
-RUN wget -O /tmp/apache-tomcat-7.0.55.tar.gz http://ftp.meisei-u.ac.jp/mirror/apache/dist/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz
+RUN wget -O /tmp/apache-tomcat-7.0.55.tar.gz http://apache.mirror.rafal.ca/tomcat/tomcat-7/v7.0.55/bin/apache-tomcat-7.0.55.tar.gz
 RUN cd /usr/local && tar xzf /tmp/apache-tomcat-7.0.55.tar.gz
 RUN ln -s /usr/local/apache-tomcat-7.0.55 /usr/local/tomcat
 RUN rm /tmp/apache-tomcat-7.0.55.tar.gz
