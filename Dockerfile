@@ -54,6 +54,7 @@ ENV APP_HOME /webapp
 
 # Build the app once, so we can include all the dependencies in the image
 RUN cd /webapp && /usr/local/maven/bin/mvn -Dmaven.test.skip=true package && \
+    rm -rf $CATALINA_HOME/webapps/* && \
     cp target/spring-mvc-showcase.war $CATALINA_HOME/webapps/ROOT.war
 
 # Set the start script as the default command (this will be overriden if a command is passed to Docker on the commandline).
