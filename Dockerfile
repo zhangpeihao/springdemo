@@ -30,6 +30,10 @@ RUN cd /usr/local && tar xzf /tmp/apache-maven-3.1.1-bin.tar.gz
 RUN ln -s /usr/local/apache-maven-3.1.1 /usr/local/maven
 RUN rm /tmp/apache-maven-3.1.1-bin.tar.gz
 
+# Copy tomcat config file
+RUN rm -f /usr/local/tomcat/conf/tomcat-users.xml
+ADD ./docker/tomcat-conf /usr/local/tomcat/conf
+
 # Copy nginx config file and delete conflicting conf
 ADD ./docker/nginx-conf /etc/nginx/conf.d
 RUN rm -f /etc/nginx/conf.d/default.conf
