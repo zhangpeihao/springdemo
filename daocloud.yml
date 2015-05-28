@@ -9,7 +9,7 @@ install:
 
 before_script:	
     - echo "Setup"
-    - sudo /bin/bash ./ci/install.sh
+    - /bin/bash ./ci/install.sh
 
 script:
     - cd webapp
