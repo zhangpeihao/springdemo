@@ -1,6 +1,5 @@
 #!/bin/bash
 
-yum install -y wget git tar
 wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.rpm -O /tmp/jdk-8u20-linux-x64.rpm
 rpm -i /tmp/jdk-8u20-linux-x64.rpm
 rm /tmp/jdk-8u20-linux-x64.rpm
