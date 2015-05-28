@@ -5,7 +5,8 @@ services:
 env:
 
 install:
-    - /bin/bash ./ci/install.sh
+    - ls -la . && ls -la ./ci
+    - sudo /bin/bash ./ci/install.sh
 
 before_script:
     - echo "Setup"
