@@ -5,8 +5,7 @@ services:
 env:
 
 install:
-    - pwd
-    - ls -la .
+    - sudo yum install -y wget git tar
 
 before_script:	
     - echo "Setup"
