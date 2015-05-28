@@ -7,10 +7,10 @@ env:
 install:
     - pwd
     - ls -la .
-    - sudo /bin/bash ./ci/install.sh
 
 before_script:	
     - echo "Setup"
+    - sudo /bin/bash ./ci/install.sh
 
 script:
     - cd webapp
