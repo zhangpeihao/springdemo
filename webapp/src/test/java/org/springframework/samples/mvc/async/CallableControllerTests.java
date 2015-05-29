@@ -32,7 +32,7 @@ public class CallableControllerTests extends AbstractContextControllerTests {
 	public void responseBody() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/callable/response-body"))
 			.andExpect(request().asyncStarted())
-			.andExpect(request().asyncResult("Callable result"))
+			.andExpect(request().asyncResult("Callable resultXXX"))
 			.andReturn();
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
