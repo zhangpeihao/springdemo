@@ -13,4 +13,5 @@ before_script:
 
 script:
     - cd webapp
+    - /usr/local/maven/bin/mvn install -q -DskipTests=true
     - /usr/local/maven/bin/mvn test
