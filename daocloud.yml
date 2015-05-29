@@ -3,6 +3,8 @@ image: centos:centos7
 services:
 
 env:
+    - JAVA_HOME=/usr/java/latest
+    - MAVEN_HOME=/usr/local/maven
 
 install:
     - yum install -y wget git tar
