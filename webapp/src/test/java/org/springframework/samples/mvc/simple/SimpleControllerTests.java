@@ -12,10 +12,10 @@ public class SimpleControllerTests {
 	@Test
 	public void simple() throws Exception {
 		standaloneSetup(new SimpleController()).build()
-			.perform(get("/simplexxx"))
+			.perform(get("/simple"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
-			.andExpect(content().string("Hello world!xxx"));
+			.andExpect(content().string("Hello world!"));
 	}
 
 }
